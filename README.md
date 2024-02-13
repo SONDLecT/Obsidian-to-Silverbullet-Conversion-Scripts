@@ -9,9 +9,9 @@ Where available, don’t reinvent the wheel and recommend/use community plugins.
 
 
 # Issues with Obsidian notes:
-* [x] Wikilinks are flat and don’t include folder structure. This means every link is a broken link
-* [x] Images are not displayed the same in SB. instead must be formatted as `[](absolute location.ext)`
-* [x] Silverbullet does not have an embed feature with ! . Any embedded note will need to be replaced with the [[template/embed]] template structure
+* [x] Wikilinks are flat and don’t include folder structure. This means every link is a broken link. Links should be updated to include the full path of a vault.
+* [x] Images are not displayed the same in SB. Instead must be formatted as `[](absolute location.ext)`
+* [x] Silverbullet does not have an embed feature with ! . Any embedded note will need to be replaced with the [[template/embed]] template codeblock
 * [x] Silverbullet does not allow embedding of sections of notes. When scripts detect an embedded note that links to a subsection of a note, it should convert the interrobang wikilink to a normal wikilink. 
 * [x] Admonitions/Callouts are not going to look pretty. Only note and warning are colorful and recognized in Silverbullet.Any admonitions should be converted to Obsidian callouts, and any Obsidian callouts should be converted to the note admonition format that Silverbullet renders correctly.
 
