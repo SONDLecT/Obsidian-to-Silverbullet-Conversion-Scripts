@@ -1,6 +1,4 @@
----
-tag: project obsidian
----
+
 # Goal:
 Create python script that when run alongside an obsidian vault will prune the .md files to make indexing in Silverbullet more friendly.
 Where available, don’t reinvent the wheel and recommend/use community plugins.
