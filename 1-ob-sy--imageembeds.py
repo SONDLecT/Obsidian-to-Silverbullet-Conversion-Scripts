@@ -25,8 +25,8 @@ def update_image_links(file_path, file_path_map):
                 # Calculate relative path from the current markdown file to the image file
                 relative_path_from_note_to_image = os.path.relpath(full_image_path, start=os.path.dirname(file_path))
                 web_safe_relative_path = urllib.parse.quote(relative_path_from_note_to_image)
-                # Construct the markdown image link
-                return f"![]({web_safe_relative_path})"
+                # Construct the markdown image link with an exclamation point
+                return f"![{web_safe_relative_path}]({web_safe_relative_path})"
         print(f"Image not found in map: {embedded_image_filename}")
         return match.group(0)
 
