@@ -20,9 +20,10 @@ Each script addresses specific formatting or compatibility issues, ensuring a sm
 These scripts are written in Python and utilize standard libraries included with Python: `os` for file and directory operations, `re` for regular expression matching, and `urllib.parse` for encoding URLs. Ensure Python 3 is installed on your system. No external dependencies are required.
 
 ## Preparing Your Environment
-1. **Install Python**: Verify that Python 3 is installed by running `python --version` or `python3 --version` in your terminal or command prompt. You should see a version number that starts with 3.
-2. **Download the Scripts**: Clone or download the Python scripts from the GitHub repository to a directory on your computer.
-3. **Adjust the Vault Path**: Before running the scripts, modify the path to your Obsidian vault within each script. Look for the line that sets `vault_root_dir`, which will typically be near the end of the script:
+1. **BACKUP YOUR ENVIRONMENT**: Look. Pulling back the curtain here: these scripts are ugly. They're provided very much as-is. I can't guarantee they'll work on your system, and I can't guarantee they'll work at all - but I hope they do! **Backup your Obsidian vault and then backup that backup. Run these scripts on one of those backups. You have been warned.**
+2. **Install Python**: Verify that Python 3 is installed by running `python --version` or `python3 --version` in your terminal or command prompt. You should see a version number that starts with 3.
+3. **Download the Scripts**: Clone or download the Python scripts from the GitHub repository to a directory on your computer.
+4. **Adjust the Vault Path**: Before running the scripts, modify the path to your Obsidian vault within each script. Look for the line that sets `vault_root_dir`, which will typically be near the end of the script:
    ```python
    vault_root_dir = './Personal Notes'  # Adjust this path to your vault's root directory
 
@@ -32,6 +33,8 @@ Replace './Personal Notes' with the actual path to your Obsidian vault, ensuring
 
 Open a terminal or command prompt, navigate to the directory containing the scripts, and run each script individually with the command python script_name.py, substituting script_name.py with the name of the script you wish to run. For example:
  `python 1-ob-sy--imageembeds.py`
+
+After you've processed your notes, you should be good to add them to your Silverbullet space. 
 
 ## Order of Execution:
 Scripts 1-5 should be run in order to avoid formatting errors. Scripts 6, 7 and 8 are all optional but may be necessary for your use if you encounter indexing issues when importing your vault. 
