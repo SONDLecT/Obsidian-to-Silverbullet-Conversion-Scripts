@@ -46,19 +46,20 @@ This script updates embedded image links within markdown files to the standard m
 This script addresses the handling of embedded links and sections within notes. It transforms Obsidian embeds (![[note]] and ![[note#section]]) into a format recognizable by Silverbullet. Full note embeds are converted into a [[template/embed]] structure, while section links are simplified to standard wikilinks. This ensures seamless integration with Silverbullet's navigation and referencing capabilities.
 
 ### 3. 3-ob-sy--fullpathlinks.py - Expand Wikilink filenames:
-To address the flat structure of wikilinks in Obsidian, this script augments wikilinks with the full path relative to the root directory, excluding the file extension. By doing so, it preserves the integrity of links during the migration to systems like Silverbullet that may interpret wikilinks differently. This script ensures that each link accurately points to its corresponding file within the vault's nested folder structure.
+To address the flat structure of wikilinks in Obsidian, this script augments wikilinks with the full path relative to the root directory, excluding the file extension. By doing so, it preserves the integrity of links during the migration to systems like Silverbullet that may interpret wikilinks differently. This script ensures that each link points to its corresponding file within the vault's nested folder structure.
 
 ### 4. 4-ob-sy--decallout.py - De-Callout/Admonition:
-This script converts Obsidian callouts and admonitions into a simplified format recognized by Silverbullet, specifically focusing on the conversion to the "note" and "warning" types that are supported with enhanced visibility. It's an essential step for those migrating content from Obsidian to Silverbullet, ensuring that important highlighted information retains its emphasis.
+This script converts Obsidian callouts and admonitions into a simplified format recognized by Silverbullet, specifically focusing on the conversion to the "note" and "warning" types that are supported with enhanced visibility. 
 
 ### 5. 5-ob-sy--filenameillegalchars.py - Filenames with illegal characters:
-To prevent indexing issues in Silverbullet, this script scans the vault for filenames containing characters that might cause errors (e.g., !, @, #). It sanitizes these filenames by removing illegal characters, thereby ensuring smooth integration and accessibility within Silverbullet. It's a crucial cleanup step for a seamless transition between the two platforms.
+To prevent indexing issues in Silverbullet, this script scans the vault for filenames containing characters that might cause errors (e.g., !, @, #), removing these illegal characters.
 
 ### 6. 6-ob-sy--dedataview.py - Remove Dataview and Inline Fields:
-This script eliminates Dataview blocks and inline field references (=) from markdown files, which are not compatible with Silverbullet. Removing these elements helps in avoiding rendering issues and ensures that the content within Silverbullet is clean and free from unsupported syntax that might lead to confusion or errors during indexing.
+This script eliminates Dataview blocks and inline field references (=) from markdown files, which are not compatible with Silverbullet.
+
 
 ### 7. 7-ob-sy--hailmaryYAMLremoval.py - Remove YAML Frontmatter:
-YAML frontmatter, while useful in Obsidian for metadata and settings, can interfere with Silverbullet's processing if a note contains invalid frontmatter. This optional script strips the YAML frontmatter from markdown files, ensuring that the content is compatible with Silverbullet's indexing and rendering processes. It's an aggressive approach to compatibility but can be necessary for those looking to streamline their notes for Silverbullet's environment.
+This optional script strips the YAML frontmatter from markdown files, ensuring that the content is compatible with Silverbullet's indexing and rendering processes. It's an aggressive approach to compatibility but can be necessary for those looking to streamline their notes for Silverbullet's environment.
 
 ### 8. 8-ob-sy--tagsfordirectories.py - Auto-tagging Based on Subdirectories:
-To enhance organization and findability within Silverbullet, this script auto-tags markdown files based on their subdirectory paths within the vault. It generates tags from each level of the directory structure (converting spaces to underscores and making lowercase), appending these tags to the top of the respective markdown files. This feature allows for a richer, more navigable structure within Silverbullet, leveraging the organizational hierarchy present in the Obsidian vault.
+To enhance organization and findability within Silverbullet, this script auto-tags markdown files based on their subdirectory paths within the vault. It generates tags from each level of the directory structure (converting spaces to underscores and making lowercase), appending these tags to the top of the respective markdown files. 
