@@ -1,21 +1,18 @@
+# Migrating from Obsidian to Silverbullet: A Practical Guide
 
-# Goal:
-Create python script that when run alongside an obsidian vault will prune the .md files to make indexing in Silverbullet more friendly.
-Where available, don’t reinvent the wheel and recommend/use community plugins.
+This guide is for those of us who've decided to make the jump from Obsidian to Silverbullet. If you're like me, you've amassed a significant collection of notes in Obsidian, only to realize that transitioning to Silverbullet comes with its own set of challenges. 
 
+During my attempt to migrate over 3,000 notes, I encountered several issues with my notes that either caused rendering, indexing or just plain aesthetic issues in Silverbullet. Here's a rundown of the problems and the scripts I developed to tackle them:
 
+- **Wikilinks**: Obsidian's wikilinks don't include folder structure, leading to broken links in Silverbullet. The scripts modify links to include the full path.
+- **Image Embeds**: Images in Obsidian are not automatically compatible with Silverbullet. The scripts adjust image links to the `[](relative location.ext)` format required by Silverbullet.
+- **Embeds and Sections**: Silverbullet lacks Obsidian's `!` embed feature. The scripts convert embeds to a compatible format and simplify section links to standard wikilinks.
+- **Admonitions/Callouts**: Silverbullet only recognizes "note" and "warning" types with enhanced visibility. The scripts transform Obsidian callouts to a compatible format.
+- **Dataview Queries**: Unsupported in Silverbullet, the scripts remove Dataview tables and inline references.
+- **Frontmatter Issues**: Excessive or invalid frontmatter can cause indexing issues in Silverbullet. A less elegant but effective solution is to remove YAML frontmatter entirely.
+- **Subdirectory Tags**: To leverage Silverbullet's tagging system for organization, the scripts generate tags based on a note's subdirectory location.
 
-
-# Issues with Obsidian notes more or less addressed by these scripts:
-* [x] Wikilinks are flat and don’t include folder structure. This means every link is a broken link. Links should be updated to include the full path of a vault.
-* [x] Images are not displayed the same in SB. Instead must be formatted as `[](relative location.ext)`
-* [x] Silverbullet does not have an embed feature with ! . Any embedded note will need to be replaced with the template codeblock
-* [x] Silverbullet does not allow embedding of sections of notes. When scripts detect an embedded note that links to a subsection of a note, it should convert the interrobang wikilink to a normal wikilink. 
-* [x] Admonitions/Callouts are not going to look pretty. Only note and warning are colorful and recognized in Silverbullet.Any admonitions should be converted to Obsidian callouts, and any Obsidian callouts should be converted to the note admonition format that Silverbullet renders correctly.
-* [x] Dataview tables and inline references won't work in SB. While there are better ways of handling this, one way of "fixing" the issue is to just remove those references.
-* [x] Maybe you're an idiot, like me, and have lots of invalid frontmatter in your Obsidian notes and never realized it. That's going to break indexing in Silverbullet for now. One particularly inelegant solution is to delete any YAML, which you could take, I guess. If you're an idiot, like me.
-* [x] If you've done the above, you may want to tag notes based on their subdirectory location. E.g., a note in /project 1/meetings/meeting-today.md will be tagged #project1 and #meeting.
----
+Each script addresses specific formatting or compatibility issues, ensuring a smoother transition from Obsidian's feature-rich environment to Silverbullet's streamlined platform. While not perfect, these solutions helped me migrate my vault with minimal loss of functionality. Hopefully, they can assist you too or inspire better solutions down the line.
 
 # Obsidian to Silverbullet Conversion Scripts:
 
